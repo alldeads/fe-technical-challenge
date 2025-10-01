@@ -1,0 +1,568 @@
+/* Global App Styles */
+.App {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+/* Error Boundary Styles */
+.error-boundary {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+/* Common Loading and Error States */
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.loading h2 {
+  color: #667eea;
+  margin-bottom: 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  text-align: center;
+  padding: 60px 20px;
+  color: #dc3545;
+}
+
+.error h2 {
+  margin-bottom: 15px;
+}
+
+.error button {
+  background-color: #667eea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+  transition: background-color 0.2s ease;
+}
+
+.error button:hover {
+  background-color: #764ba2;
+}
+
+/* ==================== GRANDMASTERS PAGE ==================== */
+.grandmasters-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.grandmasters-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grandmasters-header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.grandmasters-count {
+  margin: 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.grandmasters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.grandmaster-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 4px solid #667eea;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.grandmaster-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.grandmaster-rank {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #667eea;
+  min-width: 50px;
+  text-align: center;
+}
+
+.grandmaster-info {
+  flex: 1;
+}
+
+.grandmaster-username {
+  margin: 0 0 8px 0;
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.grandmaster-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.grandmaster-link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+/* ==================== PROFILE PAGE ==================== */
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #667eea;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #764ba2;
+  text-decoration: none;
+  color: white;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.profile-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+}
+
+.profile-basic-info {
+  flex: 1;
+}
+
+.profile-username {
+  margin: 0 0 5px 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.profile-real-name {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.profile-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge.verified {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #4CAF50;
+}
+
+.badge.streamer {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #FF6B6B;
+}
+
+.badge.gm {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #FFD700;
+}
+
+/* ==================== GRANDMASTER SUMMARY ==================== */
+.grandmaster-summary {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #333;
+  padding: 25px;
+  margin: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.summary-title {
+  margin: 0 0 20px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  color: #333;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summary-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.summary-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.online-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.timer-display {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 8px 12px;
+  border-radius: 8px;
+  min-width: 120px;
+  letter-spacing: 2px;
+}
+
+.timer-label {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.status-active {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.stat-item {
+  padding: 20px;
+  text-align: center;
+  border-right: 1px solid #eee;
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.country-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.country-flag {
+  font-size: 1.2rem;
+  padding: 2px 6px;
+  background-color: rgba(102, 126, 234, 0.1);
+  border-radius: 4px;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.country-name {
+  font-size: 1.2rem;
+}
+
+.profile-details {
+  padding: 30px;
+}
+
+.detail-section {
+  margin-bottom: 30px;
+}
+
+.detail-section:last-child {
+  margin-bottom: 0;
+}
+
+.detail-section h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.3rem;
+  color: #333;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 5px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #555;
+}
+
+.detail-value {
+  color: #333;
+  font-weight: 500;
+}
+
+.country-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.country-details .detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.country-details .detail-item:last-child {
+  border-bottom: none;
+}
+
+.streaming-platforms {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.platform-link {
+  color: #667eea;
+  text-decoration: none;
+  padding: 8px 12px;
+  background-color: #f8f9ff;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.platform-link:hover {
+  background-color: #e8ebff;
+  text-decoration: none;
+}
+
+.profile-links {
+  padding: 20px 30px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.chess-com-link {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #667eea;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.chess-com-link:hover {
+  background-color: #764ba2;
+  text-decoration: none;
+  color: white;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+  /* Grandmasters responsive */
+  .grandmasters-container {
+    padding: 10px;
+  }
+  
+  .grandmasters-header h1 {
+    font-size: 2rem;
+  }
+  
+  .grandmasters-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .grandmaster-card {
+    padding: 15px;
+  }
+  
+  .grandmaster-rank {
+    font-size: 1.2rem;
+    min-width: 40px;
+  }
+  
+  .grandmaster-username {
+    font-size: 1.1rem;
+  }
+
+  /* Profile responsive */
+  .profile-container {
+    padding: 10px;
+  }
+  
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .profile-username {
+    font-size: 1.8rem;
+  }
+
+  /* Grandmaster Summary responsive */
+  .grandmaster-summary {
+    padding: 15px;
+  }
+  
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .summary-item {
+    padding: 12px;
+  }
+  
+  .timer-display {
+    font-size: 1.5rem;
+    min-width: 100px;
+  }
+  
+  .profile-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .profile-details {
+    padding: 20px;
+  }
+}
